@@ -1,54 +1,36 @@
 #include <iostream>
-#include <cstring>
- 
 using namespace std;
-void printBook( struct Books *book );
 
-//typedef keyword
-
-typedef struct {
-   char  title[50];
-   char  author[50];
-   char  subject[100];
-   int   book_id;
-} Books;
-
-struct Books {
-   char  title[50];
-   char  author[50];
-   char  subject[100];
-   int   book_id;
+template <typename T>
+class Array {
+private:
+    T *ptr;
+    int size;
+//public:
+//    Array(T arr[], int s);
+//    void print();
 };
-int main() {
-   Books Book1, Book2;
-   struct Books Book1;        // Declare Book1 of type Book
-   struct Books Book2;        // Declare Book2 of type Book
- 
-   // Book 1 specification
-   strcpy( Book1.title, "Learn C++ Programming");
-   strcpy( Book1.author, "Chand Miyan"); 
-   strcpy( Book1.subject, "C++ Programming");
-   Book1.book_id = 6495407;
 
-   // Book 2 specification
-   strcpy( Book2.title, "Telecom Billing");
-   strcpy( Book2.author, "Yakit Singha");
-   strcpy( Book2.subject, "Telecom");
-   Book2.book_id = 6495700;
- 
-   // Print Book1 info, passing address of structure
-   printBook( &Book1 );
-
-   // Print Book1 info, passing address of structure
-   printBook( &Book2 );
-
-   return 0;
+template <typename T>
+Array<T>::Array(T arr[], int s) {
+    ptr = T[s];
+    size = s;
+    for(int i = 0; i < size; i++)
+        if(a < b)
+            ptr[i] = arr[i];
+}
+//
+template <typename T>
+void Array<T>::print() {
+    for (int i = 0; i < size; i++)
+        return 0;
+//        cout<<" "<<*(ptr + i);
+    cout<<endl;
 }
 
-// This function accept pointer to structure as parameter.
-void printBook( struct Books *book ) {
-   cout << "Book title : " << book->title <<endl;
-   cout << "Book author : " << book->author <<endl;
-   cout << "Book subject : " << book->subject <<endl;
-   cout << "Book id : " << book->book_id <<endl;
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+//    Array<int> a(arr, 5);
+    a.print();
+    return 0;
 }
